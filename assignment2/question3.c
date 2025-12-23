@@ -1,5 +1,10 @@
 #include <stdio.h>
+void greatest();
 int main()
+{
+    greatest();
+}
+void greatest()
 {
     int a = 10, b = 25, c = 15;
 

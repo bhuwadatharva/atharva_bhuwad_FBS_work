@@ -1,10 +1,13 @@
 #include <stdio.h>
-
-int main() {
-    int length = 10, width = 5;
-
-    int perimeter = 2 * (length + width);
-
+void perimeter();
+int main()
+{
+    perimeter();
+}
+void perimeter()
+{
+    int length = 10;
+    int breadth = 5;
+    int perimeter = 2 * (length + breadth);
     printf("Perimeter = %d", perimeter);
-    return 0;
 }

@@ -1,5 +1,10 @@
 #include <stdio.h>
+void result();
 int main()
+{
+    result();
+}
+void result()
 {
     int marks = 72;
 

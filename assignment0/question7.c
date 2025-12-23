@@ -1,11 +1,15 @@
 #include <stdio.h>
+void time();
+int main()
+{
+    time();
+}
 
-int main() {
-    int minutes = 130;
+void time()
+{
+    int hours = 2;
+    int minutes = 30;
+    int seconds = 45;
 
-    int hours = minutes / 60;
-    int remaining = minutes % 60;
-
-    printf("Hours = %d, Minutes = %d", hours, remaining);
-    return 0;
+    printf("Time = %02d:%02d:%02d", hours, minutes, seconds);
 }

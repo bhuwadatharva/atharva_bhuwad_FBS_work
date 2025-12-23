@@ -1,9 +1,15 @@
 #include <stdio.h>
+void area();
+int main()
+{
 
-int main() {
-    int r = 10;
+    printf("Area = %.2f", area());
+}
+
+void area()
+{
+    int r = 5;
     float pi = 3.14;
-    float area = pi*r*r;
-    printf("Sum = %f", area);
-    return 0;
+    float area = pi * r * r;
+    return area;
 }

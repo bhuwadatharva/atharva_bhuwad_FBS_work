@@ -1,5 +1,9 @@
 #include <stdio.h>
-int main()
+void studentDiscount() int main()
+{
+    studentDiscount();
+}
+void studentDiscount()
 {
     float price = 800;
     char student = 'y';

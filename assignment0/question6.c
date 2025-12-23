@@ -1,6 +1,11 @@
 #include <stdio.h>
-
-int main() {
+void sumandcube();
+int main()
+{
+    sumandcube();
+}
+void sumandcube()
+{
     int num = 4;
 
     int s = num * num;

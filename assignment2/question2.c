@@ -1,5 +1,10 @@
 #include <stdio.h>
+void typeOfTriangle();
 int main()
+{
+    typeOfTriangle();
+}
+void typeOfTriangle()
 {
     int a = 5, b = 5, c = 5;
 

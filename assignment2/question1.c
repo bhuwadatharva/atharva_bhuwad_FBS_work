@@ -1,5 +1,10 @@
 #include <stdio.h>
+void calculator();
 int main()
+{
+    calculator();
+}
+void calculator()
 {
     int a = 20, b = 5;
     char op = '*';

@@ -1,10 +1,17 @@
 #include <stdio.h>
-
-int main() {
+void uppertolower() int main()
+{
+    uppertolower()
+}
+void uppertolower()
+{
     char ch = 'a';
-   if (ch >= 'A' && ch <= 'Z') {
+    if (ch >= 'A' && ch <= 'Z')
+    {
         printf("The character is UPPERCASE.\n");
-    } else {
+    }
+    else
+    {
         printf("The character is lowercase.\n");
     }
 }

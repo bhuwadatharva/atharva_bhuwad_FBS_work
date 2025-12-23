@@ -1,13 +1,19 @@
 #include <stdio.h>
+void leapyear();
+int main()
+{
+    leapyear();
+}
+void leapyear()
+{
+    int year = 2020;
 
-int main() {
-    int year=2004;
-
-
-    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-        printf("%d is a leap year.\n", year);
-    } else {
-        printf("%d is not a leap year.\n", year);
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+    {
+        printf("%d is a leap year\n", year);
     }
-
+    else
+    {
+        printf("%d is not a leap year\n", year);
+    }
 }

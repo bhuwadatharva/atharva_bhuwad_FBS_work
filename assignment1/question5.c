@@ -1,10 +1,18 @@
-int main(){
-	int a =3;
-	if(a>=18)
+#include <stdio.h>
+void vote();
+int main()
+{
+	vote()
+}
+void vote()
+{
+	int a = 3;
+	if (a >= 18)
 	{
 		printf("the person is eligible for vote");
 	}
-	else{
+	else
+	{
 		printf("the person is not eligible for vote");
 	}
 }

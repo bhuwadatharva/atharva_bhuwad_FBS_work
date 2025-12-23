@@ -1,12 +1,18 @@
-#include<stdio.h>
-
-int main(){
-	int a =3;
-	if(a%2 ==0)
+#include <stdio.h>
+void evenodd();
+int main()
+{
+	evenodd();
+}
+evenodd()
+{
+	int a = 3;
+	if (a % 2 == 0)
 	{
 		printf("the number is even");
 	}
-	else{
+	else
+	{
 		printf("the number is odd");
 	}
 }
