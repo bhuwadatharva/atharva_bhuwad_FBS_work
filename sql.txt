@@ -1,0 +1,120 @@
+1)
+select e_name,salary from employee
+order by salary desc;
+
+2)select * from employee 
+order by salary desc
+limit 5;
+
+3)select * from employee
+order by e_id
+limit 5 offset 3;
+
+4)select department_id, count(*) AS total_employees
+FROM Employee
+GROUP BY department_i;
+
+5)select dept_id ,avg(salary) as avg_salary
+from employee
+group by dept_id 
+having avg(salary)>50000;
+
+6)select * from product where product_name like '%laptop%';
+
+7)select substring(student_name,1,3) as thr_student
+from Student;
+
+8)selct * from student where student_name like 'A%';
+
+9)
+
+10)select category ,sum(sales_amount) as total_sales,avg(sales_amount) as avg_sales from sales
+group by category
+having sum(sales_amount) > 100000;
+
+11)select * from employee where salary between 30000 and 60000;
+
+12) select * from employee where department not in ('HR', 'Admin');
+
+13) select * from student where email_id is NULL;
+
+14)select * from employee where dept_id  = 1 or dept_id = 3;
+
+15)select * from employee where age > 25 and salary<50000;
+
+16)select dept_id , max(salary) as max_salary
+from employee
+group by dept_id;
+
+17)select city, count(*) as total_student
+from student
+group by city;
+
+18)select
+min(salary) as min_salary,
+max(salary) as max_salary,
+avg(salary) as avg_salary
+from employee;
+
+19)select dept_id , count(*) as total_employee
+from employee
+group by dept_id
+having count(*) > 5;
+
+20)select dept_id, sum(distinct salary) as total_salary
+from employees
+group by dept_id
+order by total_salary desc;
+
+21)select upper(e_name) as upper_emp
+from employee;
+
+22)select e_name, length(e_name) as name_length
+from employee;
+
+23)select substring(student_name, length(student_name)-1,2) from student;
+
+
+
+24)select *
+from employees
+order by salary asc
+limit 3;
+
+25)select *
+from products
+order by price asc, product_name desc;
+
+26)
+c) having
+
+27)
+b)count
+
+28)
+b) is null
+
+29)
+b)order by
+
+30)
+b)check a range of values 
+
+31)
+c)avg
+
+32)
+b)group by
+
+33)
+c)limit
+
+34)
+c)like
+
+35)
+c)total number of rows
+
+
+
+
