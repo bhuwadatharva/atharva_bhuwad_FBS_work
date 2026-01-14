@@ -118,3 +118,7 @@ c)total number of rows
 
 
 
+//get the average salary from each age group but exclude those records where avg salary is less than 20000
+//print the name of dept which are offering a maximum salary
+
+//

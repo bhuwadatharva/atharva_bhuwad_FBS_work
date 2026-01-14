@@ -1,0 +1,19 @@
+2) 
+insert into department values
+(90, 'Finance', 210, 2600),
+(100, 'Quality Control', 211, 2200),
+(110, 'Research', 212, 2800);
+
+3)
+insert into jobs (job_id, job_title, min_salary, max_salary)
+values ('HR_REP', 'HR Representative', 4000, 9000);
+
+4)
+update employees
+set salary = salary * 1.10;
+
+5)
+update employees
+set email = 'not available'
+where department_id = 80
+and commission_pct < 0.20;

@@ -1,0 +1,100 @@
+1)
+select first_name as "first name", last_name as "last name"
+from employees;
+
+2)
+select distinct department_id
+from employees;
+
+3)
+select *
+from employees
+order by first_name desc;
+
+4)
+select first_name, last_name, salary, salary * 0.15 as pf
+from employees;
+
+5)
+select employee_id, first_name, last_name, salary
+from employees
+order by salary asc;
+
+6)
+select sum(salary) as total_salary
+from employees;
+
+7)
+
+select max(salary) as maximum_salary, min(salary) as minimum_salary
+from employees;
+
+8)
+select avg(salary) as average_salary, count(*) as total_employees
+from employees;
+
+9)
+select count(*) as number_of_employees
+from employees;
+
+10)
+select count(distinct job_id) as number_of_jobs
+from employees;
+
+11)
+select *
+from employees
+limit 10;
+
+12)
+select first_name, last_name, salary
+from employees
+where salary not between 10000 and 15000;
+
+13)
+select first_name, last_name, department_id
+from employees
+where department_id in (30, 100)
+order by department_id asc;
+
+14)
+select first_name, last_name, salary
+from employees
+where salary not between 10000 and 15000
+and department_id in (30, 100);
+
+15)
+select first_name, last_name, hire_date
+from employees
+where year(hire_date) = 1987;
+
+16)
+select first_name
+from employees
+where first_name like '%b%'
+and first_name like '%c%';
+
+17)
+select last_name, job_id, salary
+from employees
+where job_id in ('programmer', 'shipping clerk')
+and salary not in (4500, 10000, 15000);
+
+18)
+select last_name
+from employees
+where length(last_name) = 6;
+
+19)
+select last_name
+from employees
+where last_name like '__e%';
+
+20)
+select distinct job_id
+from employees;
+
+21)
+select *
+from employees
+where last_name in ('blake', 'scott', 'king', 'ford');
