@@ -227,6 +227,7 @@ void sortByPrice(Book *ptr, int s)
 {
     Book temp;
     int i, j;
+
     for (i = 0; i < s - 1; i++)
         for (j = i + 1; j < s; j++)
             if (ptr[i].price > ptr[j].price)
@@ -235,12 +236,15 @@ void sortByPrice(Book *ptr, int s)
                 ptr[i] = ptr[j];
                 ptr[j] = temp;
             }
+
+    displayAllBooks(ptr, s);
 }
 
 void sortByRating(Book *ptr, int s)
 {
     Book temp;
     int i, j;
+
     for (i = 0; i < s - 1; i++)
         for (j = i + 1; j < s; j++)
             if (ptr[i].rating < ptr[j].rating)
@@ -249,6 +253,8 @@ void sortByRating(Book *ptr, int s)
                 ptr[i] = ptr[j];
                 ptr[j] = temp;
             }
+
+    displayAllBooks(ptr, s);
 }
 
 void topThree(Book *ptr, int s)
