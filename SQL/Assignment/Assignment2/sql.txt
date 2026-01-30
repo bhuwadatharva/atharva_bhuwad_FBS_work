@@ -1,0 +1,213 @@
+1)
+create table member(
+   Member_Id integer,
+    Member_Name varchar(30),
+    Member_address varchar(50),
+    Acc_Open_Date date,
+    Membership_type varchar(20),
+    Fees_paid integer,
+    Max_Books_Allowed integer,
+    Penalty_Amount decimal(7,2)
+)
+
+
+create table Member (
+    Member_Id integer,
+    Member_Name varchar(30),
+    Member_address varchar(50),
+    Acc_Open_Date date,
+    Membership_type varchar(20),
+    Fees_paid integer,
+    Max_Books_Allowed integer,
+    Penalty_Amount decimal(7,2)
+);
+
+create tableBooks (
+    Book_No integer,
+    Book_Name varchar(30),
+    Author_name varchar(30),
+    Cost decimal(7,2),
+    Category char(10)
+);
+
+create table Issue (
+    Lib_Issue_Id integer,
+    Book_No integer,
+    Member_Id integer,
+    Issue_Date date,
+    Return_date date
+);
+
+2)
+DESC Member;
+DESC Books;
+DESC Issue;
+
+3)
+drop table member;
+
+4)
+create table Member (
+    Member_Id integer primary key,
+    Member_Name varchar(20),
+    Member_address varchar(50),
+    Acc_Open_Date date,
+     Membership_type VARCHAR(20) 
+        CHECK (Membership_type IN ('Lifetime','Annual','Half Yearly','Quarterly')),
+    Fees_paid integer,
+    Max_Books_Allowed integer,
+    Penalty_Amount decimal(7,2)
+);
+
+5)
+alter table Member modify Member_Name varchar(30);
+
+6)
+alter table Issue add Reference char(30);
+
+7)
+alter table Issue drop column Reference;
+
+8)
+alter table Issue rename to Lib_Issue;
+
+9)
+INSERT INTO Member VALUES
+(1,'Richa Sharma','Pune',TO_DATE('10-12-2005','DD-MM-YYYY'),'Lifetime',25000,5,50);
+
+INSERT INTO Member VALUES
+(2,'Garima Sen','Pune',SYSDATE,'Annual',1000,3,NULL);
+
+10)
+
+INSERT INTO Member VALUES (3,'Amit Patil','Mumbai',SYSDATE,'Quarterly',500,2,0);
+INSERT INTO Member VALUES (4,'Neha Joshi','Delhi',SYSDATE,'Half Yearly',1500,4,10);
+INSERT INTO Member VALUES (5,'Rahul Mehta','Pune',SYSDATE,'Annual',1200,3,5);
+INSERT INTO Member VALUES (6,'Sneha Kulkarni','Nashik',SYSDATE,'Lifetime',30000,6,0);
+INSERT INTO Member VALUES (7,'Vikram Rao','Chennai',SYSDATE,'Quarterly',600,2,0);
+
+11)
+alter table Member modify Member_Name varchar(20);
+
+12)
+
+
+13)
+create table Member101 as select * from Member;
+
+14)
+alter table Member 
+add constraint chk_max_books check (Max_Books_Allowed < 100);
+
+alter table Member 
+add constraint chk_penalty check (Penalty_Amount <= 1000);
+
+15)
+drop table Books;
+
+16)
+create table Books (
+    Book_No integer primary key,
+    Book_Name varchar(30) not null,
+    Author_name varchar(30),
+    Cost decimal(7,2),
+    Category varchar(15)
+        check (Category in ('System','Fiction','Database','RDBMS','Others'))
+);
+
+17)
+insert into Books values (101,'Let us C','Denis Ritchie',450,'System');
+insert into Books values (102,'Oracle – Complete Ref','Loni',550,'Database');
+insert into Books values (103,'Mastering SQL','Loni',250,'Database');
+insert into Books values (104,'PL SQL-Ref','Scott Urman',750,'Database');
+
+18)
+insert into Books values (106,'C Programming','Kernighan',500,'System');
+insert into Books values (107,'DBMS Concepts','Navathe',650,'RDBMS');
+
+19)
+select * from Member;
+select * from Books;
+select * from Lib_Issue;
+
+20)
+insert into Books values (105,'National Geographic','Adis Scott',1000,'Science');
+
+21)
+alter table Lib_Issue rename to Issue;
+
+22)
+drop table Issue;
+
+23)
+create table Issue (
+    Lib_Issue_Id integer primary key,
+    Book_No integer,
+    Member_Id integer,
+    Issue_Date date,
+    Return_date date,
+    constraint fk_book foreign key (Book_No) references Books(Book_No),
+    constraint fk_member foreign key (Member_Id) references Member(Member_Id)
+);
+
+24)
+insert into Issue values (7001,101,1,to_date('10-12-2006','dd-mm-yyyy'),null);
+insert into Issue values (7002,102,2,to_date('25-12-2006','dd-mm-yyyy'),null);
+insert into Issue values (7003,104,1,to_date('15-01-2006','dd-mm-yyyy'),null);
+insert into Issue values (7004,101,1,to_date('04-07-2006','dd-mm-yyyy'),null);
+insert into Issue values (7005,104,2,to_date('15-11-2006','dd-mm-yyyy'),null);
+insert into Issue values (7006,101,3,to_date('18-02-2006','dd-mm-yyyy'),null);
+
+25)
+alter table Issue drop constraint fk_book;
+alter table Issue drop constraint fk_member;
+
+26)
+insert into Issue values (7007,101,999,to_date('01-01-2007','dd-mm-yyyy'),null);
+
+27)
+alter table Issue add constraint fk_book foreign key (Book_No) references Books(Book_No);
+alter table Issue add constraint fk_member foreign key (Member_Id) references Member(Member_Id);
+
+28)
+delete from Issue where Member_Id = 999;
+
+alter table Issue add constraint fk_book foreign key (Book_No) references Books(Book_No);
+alter table Issue add constraint fk_member foreign key (Member_Id) references Member(Member_Id);
+
+29)
+delete from Member where Member_Id = 1;
+
+30)
+desc Member;
+desc Issue;
+desc Books;
+
+select * from Member;
+select * from Issue;
+select * from Books;
+
+31)
+update Issue
+set Return_date = Issue_Date + 15
+where Lib_Issue_Id in (7004,7005);
+
+32)
+delete from Issue
+where Member_Id = 1
+and Issue_Date < to_date('10-12-2006','dd-mm-yyyy');
+
+33)
+delete from Books
+where Category not in ('Database','RDBMS');
+
+34)
+drop table Member;
+
+35)
+drop table Books;
+
+
+
+
+
